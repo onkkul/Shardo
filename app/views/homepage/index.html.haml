@@ -3,6 +3,7 @@
 %h3 New User?
 //%p signup
 //%p login
-%a.button{:href => "#"} signup
+%a.button{:href => "homepage/signup"} signup
 %h3 Already have an account?
 %a.button{:href => "#"} login
+= link_to "signup with github" , '/auth/github'
