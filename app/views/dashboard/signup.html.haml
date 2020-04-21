@@ -1,0 +1,27 @@
+%h1 Signup Page
+= link_to "signup" , '/auth/github'
+
+%h3 New User
+
+= label :first_name, :title, 'First Name'
+= text_field :first_name, 'title'
+%br
+= label :last_name, :title, 'Last Name'
+= text_field :last_name, 'Last Name'
+%br
+= label :phone_number, :title, 'Phone Number'
+= text_field :phone_number, 'Phone Number'
+%br
+= label :phone_number, :title, 'Phone Number'
+= text_field :phone_number, 'Phone Number'
+%br
+= label :b_id, :title, 'BU ID'
+= text_field :b_id, 'BU ID'
+%br
+= radio_button_tag(:type, "student") #age params  params[:type]
+= label_tag(:type_student, "Student") 
+= radio_button_tag(:type, "event manager") 
+= label_tag(:type_eventmanager, "Event Manager") 
+%br
+%br
+= submit_tag 'Save Changes', :class => 'btn btn-primary'

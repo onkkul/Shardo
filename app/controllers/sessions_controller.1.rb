@@ -40,8 +40,7 @@ class SessionsController < ApplicationController
           puts '6'
           auth=Authorization.find_with_omniauth(auth_hash)
           message="Welcome back #{auth.user.name}!"+ "You have logged in via #{auth.provider}"
-          redirect_to dashboard_signup_path #and return
-          #redirect_to dashboard_index_path #and return 
+          #redirect_to dashboard_signup_path #and return
         else
           puts "user exists"
           if User.exists?(auth_hash['info'])
@@ -49,7 +48,6 @@ class SessionsController < ApplicationController
             user=User.find_with_omniauth(auth_hash['info'])
             auth=user.add_provider(auth_hash)
             message="You can now login using #{auth_hash["provider"].captilize}"
-            redirect_to dashboard_index_path #and return
           else #User is registering with given provider
             puts 'Should go here'
             p auth_hash['info']
@@ -57,7 +55,7 @@ class SessionsController < ApplicationController
             user = User.create_with_omniauth(auth_hash['info'])#! :name => auth_hash["info"]["name"], :email => auth_hash["info"]["email"] 
             auth=user.authorizations.create_with_omniauth(auth_hash)
             message = "Welcome #{user.name}! You have signed up via #{auth.provider}"
-            redirect_to dashboard_signup_path
+            #redirect_to welcome_signup_path
           end
         end
        puts '3'
@@ -65,12 +63,12 @@ class SessionsController < ApplicationController
        session[:user_id] = auth.user.id
        self.current_user = auth.user
        flash[:notice] = "#{message}"
-       #redirect_to dashboard_index_path and return 
+       redirect_to dashboard_index_path and return 
        #redirect_to dashboard_signup_path and return
       end
     rescue DoubleLoginError,NotCurrentUserError, Exception => exception
          flash[:error]="#{exception.class}: #{exception.message}"
-         #redirect_to dashboard_index_path and return
+         redirect_to dashboard_index_path and return
     end
   end
 
