@@ -40,7 +40,10 @@ class SessionsController < ApplicationController
           puts '6'
           auth=Authorization.find_with_omniauth(auth_hash)
           message="Welcome back #{auth.user.name}!"+ "You have logged in via #{auth.provider}"
-          redirect_to dashboard_signup_path #and return
+          session[:user_id] = auth.user.id
+          self.current_user = auth.user
+          redirect_to dashboard_index_path #and return
+          
           #redirect_to dashboard_index_path #and return 
         else
           puts "user exists"
@@ -49,15 +52,21 @@ class SessionsController < ApplicationController
             user=User.find_with_omniauth(auth_hash['info'])
             auth=user.add_provider(auth_hash)
             message="You can now login using #{auth_hash["provider"].captilize}"
+            session[:user_id] = auth.user.id
+            self.current_user = auth.user
             redirect_to dashboard_index_path #and return
           else #User is registering with given provider
             puts 'Should go here'
             p auth_hash['info']
-            
+            #auth_hash["info"]["email"] check if BU email and then go to failure if not BU
             user = User.create_with_omniauth(auth_hash['info'])#! :name => auth_hash["info"]["name"], :email => auth_hash["info"]["email"] 
             auth=user.authorizations.create_with_omniauth(auth_hash)
             message = "Welcome #{user.name}! You have signed up via #{auth.provider}"
-            redirect_to dashboard_signup_path
+            #create current_user and session
+            session[:user_id] = auth.user.id
+            self.current_user = auth.user
+            @user = auth.user
+            redirect_to edit_user_path(@user) 
           end
         end
        puts '3'

@@ -21,4 +21,8 @@ class User < ActiveRecord::Base
    def add_provider auth_hash
       self.authorizations.create_with_omniauth auth
    end
+   
+   def get_user_info
+      
+   end
 end
