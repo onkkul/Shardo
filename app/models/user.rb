@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
    has_many :authorizations
+   has_many :posts
    validates :name, :email, :presence => true
    
    #save user info
@@ -25,4 +26,6 @@ class User < ActiveRecord::Base
    def get_user_info
       
    end
+   
+   
 end

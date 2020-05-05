@@ -1,5 +1,9 @@
 %h1 Dashboard
-%p Find me in app/views/dashboard/index.html.haml
+// %p Find me in app/views/dashboard/index.html.haml
 
 = link_to 'CleanUp', cleanup_path
 = link_to 'EditProfile', edit_user_path(current_user)
+
+
+// if @user['usertype'] == 'eventmanager'
+= link_to 'Create Post', new_user_post_path(current_user)
