@@ -1,0 +1,25 @@
+%h1 Dashboard
+// %p Find me in app/views/posts/index.html.haml
+Hello, {@user.id}!
+= link_to 'CleanUp', cleanup_path
+= link_to 'EditProfile', edit_user_path(current_user)
+
+// if @user['usertype'] == 'eventmanager'
+// <% if @user['usertype'] == 'eventmanager' %>
+//     <%= link_to 'Create Post', new_user_post_path(current_user) %>
+// <% end %>
+
+%table#posts.table.table-striped.col-md-12
+  %thead
+    %tr
+      %th Title
+      %th location
+      %th ingredients  
+      %th quantity
+  %tbody
+    - @posts.each do |post|
+      %tr
+        %td= post.title
+        %td= post.location
+        %td= post.ingredients
+        %td= post.quantity

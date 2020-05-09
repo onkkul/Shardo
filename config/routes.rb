@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :posts
   end
   
-  get 'dashboard/index'
+  #get 'dashboard/index'
 
   get '/login', :to => 'sessions#new', :as => 'login'
 
@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   get '/logout' , :to =>'sessions#destroy', :as => 'logout'
   get 'welcome/cleanup' , :to => 'sessions#cleanup' , :as => 'cleanup'
-  get 'dashboard/signup' , :to => 'dashboard#signup' , :as => 'dashboard/signup'
+  #get 'dashboard/signup' , :to => 'dashboard#signup' , :as => 'dashboard/signup'
   
   
 
