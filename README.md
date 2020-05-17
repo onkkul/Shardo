@@ -8,9 +8,8 @@ notifications. The users will have access to track the location of the food,</br
 read the description of the food and how much quantity is available.</br>
 
 
-
 ***Instructions:***
-***Installations:***
+**Installations:**
 - Check version of privacy guard: **gpg2 -v**
 - Install it using: **sudo apt installl gnupg2**
 - Get stable version of RVM: **\curl -sSL https://get.rvm.io | bash -s stable**
@@ -23,7 +22,7 @@ read the description of the food and how much quantity is available.</br>
 - Install version: **gem install rails -v 4.2.10**
 - Install bundler using: **gem install bundler**
 
-***System Dependencies and Configuration***
+**System Dependencies and Configuration**
 - Type **Bundle install gemfile**
 - If at any time you get an error message concerning sprockets: **gem install sprockets -v 3.7.2**
 - Install bundler: **gem install bundler --version '< 1.16.1'**
@@ -35,7 +34,7 @@ read the description of the food and how much quantity is available.</br>
                                                 **rake db:migrate:status**
                                                 **rake db:seed**
 
-***Deployment Instructions***
+**Deployment Instructions**
 - Push to github: **git init** </br>
                   **git add .**     #stages uncommited changes </br>
                   **git status**    #shows changes that are staged for commit </br>
