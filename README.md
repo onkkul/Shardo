@@ -20,12 +20,10 @@ read the description of the food and how much quantity is available.</br>
 - Check if rails is installed: **rails -v**
 - Install rails using: **sudo apt install ruby-railties**
 - Install version: **gem install rails -v 4.2.10**
-- Install bundler using: **gem install bundler**
+- Install bundler: **gem install bundler --version '< 1.16.1'**
 
 **System Dependencies and Configuration:**
-- Type **Bundle install gemfile**
 - If at any time you get an error message concerning sprockets: **gem install sprockets -v 3.7.2**
-- Install bundler: **gem install bundler --version '< 1.16.1'**
 - Use bundler to install dependencies: **bundle install --without production**
 
 **DB crearion and Initialization:**
