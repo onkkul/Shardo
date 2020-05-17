@@ -51,5 +51,5 @@ read the description of the food and how much quantity is available.</br>
 
 
 ***Git link:***
-    Devlopment = https://github.com/onkkul/Shardo/tree/Devlopment
+    Devlopment = https://github.com/onkkul/Shardo/tree/Devlopment </br>
     Master = https://github.com/onkkul/Shardo
