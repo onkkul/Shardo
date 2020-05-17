@@ -10,17 +10,17 @@ read the description of the food and how much quantity is available.</br>
 
 ***Instructions:***</br>
 **Installations:**
-- Check version of privacy guard: **gpg2 -v**
-- Install it using: **sudo apt installl gnupg2**
-- Get stable version of RVM: **\curl -sSL https://get.rvm.io | bash -s stable**
-- Check rvm version: **rvm -v**
-- Install rvm of specific version: **rvm install 2.4.0**
-- Generagte documentation: **rvm docs generate-ri**
-- Use version of Ruby: **rvm use ruby 2.4.0**
-- Check if rails is installed: **rails -v**
-- Install rails using: **sudo apt install ruby-railties**
-- Install version: **gem install rails -v 4.2.10**
-- Install bundler using: **gem install bundler**
+-- Check version of privacy guard: **gpg2 -v**
+-- Install it using: **sudo apt installl gnupg2**
+-- Get stable version of RVM: **\curl -sSL https://get.rvm.io | bash -s stable**
+-- Check rvm version: **rvm -v**
+-- Install rvm of specific version: **rvm install 2.4.0**
+-- Generagte documentation: **rvm docs generate-ri**
+-- Use version of Ruby: **rvm use ruby 2.4.0**
+-- Check if rails is installed: **rails -v**
+-- Install rails using: **sudo apt install ruby-railties**
+-- Install version: **gem install rails -v 4.2.10**
+-- Install bundler using: **gem install bundler**
 
 **System Dependencies and Configuration:**
 - Type **Bundle install gemfile**
