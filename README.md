@@ -3,7 +3,7 @@
 Web application for Binghamton University to share the extra food left after any event. Anyone who wants to share the food can login as event manager. He/She can click a picture of the food,describe/tag the type of food ,add the address for pick-up and then post it.Registered users receive notifications.The users will have access to track the location of the food, read the description of the food and how much quantity is available.
 
 ***Execution Instructions:***
-- Check version of provacy guard: **gpg2 -v**
+- Check version of privacy guard: **gpg2 -v**
 - Install it using: **sudo apt installl gnupg2**
 - Get stable version of RVM: **\curl -sSL https://get.rvm.io | bash -s stable**
 - Check rvm version: **rvm -v**
@@ -16,7 +16,7 @@ Web application for Binghamton University to share the extra food left after any
 - Install bundler using: **$gem install bundler**
 - Type **$Bundle install gemfile**
 - If at any time you get an error message concerning sprockets: **gem install sprockets -v 3.7.2**
-- Install bundler: **gem install bundler --version '< 2.0**
+- Install bundler: **gem install bundler --version '< 1.16.1'**
 - Use bundler to install dependencies: **bundle install --without production**
 - use following commands to generate databases: **rake db:migrate:status**
                                                 **rake db:migrate**
