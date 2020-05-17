@@ -8,7 +8,7 @@ notifications. The users will have access to track the location of the food,</br
 read the description of the food and how much quantity is available.</br>
 
 
-***Instructions:***</br>
+## Instructions: </br>
 **Installations:**
 - Check version of privacy guard: **gpg2 -v**
 - Install it using: **sudo apt installl gnupg2**
