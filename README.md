@@ -29,10 +29,10 @@ read the description of the food and how much quantity is available.</br>
 - Use bundler to install dependencies: **bundle install --without production**
 
 ***DB crearion and Inititalization:***
-- use following commands to generate databases: **rake db:migrate:status**
-                                                **rake db:migrate**
-                                                **rake db:migrate:status**
-                                                **rake db:seed**
+- use following commands to generate databases: **rake db:migrate:status** </br>
+                                                **rake db:migrate** </br>
+                                                **rake db:migrate:status** </br>
+                                                **rake db:seed** </br>
 
 **Deployment Instructions:**
 - Push to github: **git init** </br>
