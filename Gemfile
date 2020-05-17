@@ -3,8 +3,10 @@ source 'https://rubygems.org'
 ruby '2.4.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.10'
+
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', '1.3.13'
+#gem 'sqlite3', '1.3.13'
+
 #gem 'haml-rails'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -33,6 +35,9 @@ gem 'loofah' , '>=2.2.3'
 
 gem 'omniauth'
 gem 'omniauth-github'  
+
+gem 'carrierwave', '~> 0.10.0'
+gem 'mini_magick', '~> 4.3'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -80,4 +85,5 @@ group :production do
   gem 'rails_12factor'
 
 end 
+
 

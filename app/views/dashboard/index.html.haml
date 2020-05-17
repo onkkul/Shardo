@@ -6,4 +6,6 @@
 
 
 // if @user['usertype'] == 'eventmanager'
-= link_to 'Create Post', new_user_post_path(current_user)
+//= link_to 'Create Post', new_user_post_path(current_user)
+//= hidden_field_tag ":release_date_sort", true if @date_header
+= hidden_field_tag "link_to 'Create Post', new_user_post_path(current_user)", true if current_user.usertype=='eventmanager'

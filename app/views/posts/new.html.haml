@@ -1,7 +1,5 @@
 %h1 Create a post 
-
-
-= form_tag user_posts_path(@user), :method => :create do
+= form_tag user_posts_path(@user), {Multipart:true} do
 
   = label :post, :title,  'Post Title'
   = text_field :post, 'title'
@@ -13,8 +11,7 @@
   = text_field :post, 'location'
 
   = label :post, :image,  'image'
-  = image_tag('image')
-  //= image_tag :post, 'image'
+  = file_field :post,  'image'
 
   = label :post, :quantity,  'Quantity'
   = text_field :post, 'quantity'
@@ -25,4 +22,3 @@
   = hidden_field :user_id, value: @user.id
 
   = submit_tag 'Create new Post!', :class => 'btn btn-primary'
-
