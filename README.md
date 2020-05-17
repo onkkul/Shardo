@@ -28,7 +28,7 @@ read the description of the food and how much quantity is available.</br>
 - Install bundler: **gem install bundler --version '< 1.16.1'**
 - Use bundler to install dependencies: **bundle install --without production**
 
-***DB crearion and Inititalization:***
+**DB crearion and Initialization:**
 - use following commands to generate databases: **rake db:migrate:status** </br>
                                                 **rake db:migrate** </br>
                                                 **rake db:migrate:status** </br>
