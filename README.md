@@ -23,19 +23,19 @@ Web application for Binghamton University to share the extra food left after any
                                                 **rake db:migrate:status**
                                                 **rake db:seed**
 
-- Push to github: **git init**
-                  **git add .**     #stages uncommited changes
-                  **git status**    #shows changes that are staged for commit
-                  **git commit -m "original commit"**    #commits and labels changes
-                  **git status**    #should now show that working tree is clean
+- Push to github: **git init**</br>
+                  **git add .**     #stages uncommited changes </br>
+                  **git status**    #shows changes that are staged for commit</br>
+                  **git commit -m "original commit"**    #commits and labels changes</br>
+                  **git status**    #should now show that working tree is clean</br>
 
 - Bring up the server 'locally': **rails server -p 8080**
 
-- Push it to Heroku: **heroku login -i**
-                     **heroku create**
-                     **git push heroku master**
-                     **heroku run rake db:migrate**
-                     **heroku run rake db:seed**
+- Push it to Heroku: **heroku login -i**</br>
+                     **heroku create**</br>
+                     **git push heroku master**</br>
+                     **heroku run rake db:migrate**</br>
+                     **heroku run rake db:seed**</br>
 
 
 
