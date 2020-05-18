@@ -26,6 +26,10 @@ read the description of the food and how much quantity is available.</br>
 - If at any time you get an error message concerning sprockets: **gem install sprockets -v 3.7.2**
 - Use bundler to install dependencies: **bundle install --without production**
 
+**Testing**
+- To test single feature: **cucumber filename.feature**
+- To test all: **cucumber**
+
 **DB crearion and Initialization:**
 - use following commands to generate databases: **rake db:migrate:status** </br>
                                                 **rake db:migrate** </br>
