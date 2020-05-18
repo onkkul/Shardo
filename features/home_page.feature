@@ -13,7 +13,8 @@ Then I should see "Welcome to Shardo"
 Then I should see "signup"
 Then I should see "login"
 
-Scenario : Successful student Signup
+Scenario:Successful student Signup
+  
 When I press signup
 Then I am on the Food Sharing App Signup page
 And I fill in "Name"

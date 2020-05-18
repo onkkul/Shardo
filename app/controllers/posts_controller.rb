@@ -7,17 +7,17 @@ class PostsController < ApplicationController
   def index
     @user=User.find(params[:user_id])
     @posts = Post.all
-    post_array = Array.new
-    @posts.each do |p|
-      @post = p
-      if @post.created_at - @post.post_age > Time.now
-        post_array.insert(0, @post)
-      end
-    end
+    # post_array = Array.new
+    # @posts.each do |p|
+    #   @post = p
+    #   if @post.created_at - @post.post_age > Time.now
+    #     post_array.insert(0, @post)
+    #   end
+    # end
     #@posts =  Post.all.collect{|s| s.created_at - s.post_age}
     #get the posts with post age still valid
     p @posts
-    return post_array
+    # return post_array
   end
   
   def create
