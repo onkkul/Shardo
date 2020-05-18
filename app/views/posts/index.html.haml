@@ -1,0 +1,45 @@
+%h1 Dashboard
+// %p Find me in app/views/posts/index.html.haml
+Hello, #{@user.name}!
+//User type , #{@user.usertype}
+= link_to 'CleanUp', cleanup_path
+= link_to 'EditProfile', edit_user_path(current_user)
+
+//= link_to 'Create Post', new_user_post_path(current_user)
+//= hidden_field_tag "=link_to 'Create Post', new_user_post_path(current_user)", true if @user.usertype=='student'
+//, true if current_user.usertype=='student'
+//= hidden_field_tag " #{@user.name}! " , class: "#{'display-none' if @user.usertype=='student'}"
+= link_to 'Create Post', new_user_post_path(current_user), style: "#{'display:none' if @user.usertype == 'student'}"
+
+%table#posts.table.table-striped.col-md-12
+  %thead
+    %tr
+      %th Image
+      %th Title
+      %th location
+      %th ingredients  
+      %th quantity
+  %tbody
+    - @posts.each do |post|
+      %tr
+        %td= image_tag post.image.thumb.url
+        // post.image
+        // .thumb.url
+        %td= post.title
+        %td= post.location
+        %td= post.ingredients
+        %td= post.quantity
+        
+// %p#notice= notice
+// %p
+//   %strong Name:
+//   = @pet.title
+// %p
+//   %strong Description:
+//   = @pet.description
+// %p
+//   %strong Image:
+//   = image_tag @pet.image.thumb.url
+// = link_to 'Edit', edit_pet_path(@pet)
+// |
+// = link_to 'Back', pets_path

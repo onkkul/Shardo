@@ -17,6 +17,9 @@ module NavigationHelpers
       '/'
     when /^the Food Sharing App Home page$/
       homepage_index_path
+      
+    #when /^the Food Sharing App Signup page$/
+      #signuppage_index_path
     
        
     # Add more mappings here.

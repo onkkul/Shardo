@@ -12,3 +12,19 @@ When I am on the Food Sharing App Home page
 Then I should see "Welcome to Shardo"
 Then I should see "signup"
 Then I should see "login"
+
+Scenario:Successful student Signup
+  
+When I press signup
+Then I am on the Food Sharing App Signup page
+And I fill in "Name"
+And I fill in "Username"
+And I fill in "email"
+And I fill in "phonenumber "
+And I fill in "password"
+And I fill in "confirmpassword"
+And I choose 'student' #"radio_student"
+And I press "signup"
+Then I am on the Food Sharing App Home page
+And I should see "Registered successfully"
+

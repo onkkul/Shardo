@@ -1,0 +1,28 @@
+%h1 User Profile 
+//= link_to "signup" , '/auth/github'
+
+%h3 Complete your profile
+
+= form_tag user_path(@user), :method => :put do
+
+  = label :user, :firstname,  'First Name'
+  = text_field :user, 'firstname'
+
+  = label :user, :lastname, 'Last Name'
+  = text_field :user, 'lastname'
+  
+  //= radio_button_tag "usertype", "student"
+  //= radio_button_tag "usertype", "eventmanager"
+  = label :user, :usertype, 'User Type'
+  = select :user, :usertype, ['student','eventmanager']
+  
+  // = radio_button_tag(:usertype, "student") #age params  params[:type]
+  //   = label_tag(:usertype_student, "Student") 
+  // = radio_button_tag(:usertype, "eventmanager") 
+  //   = label_tag(:usertype_eventmanager, "Event Manager") 
+
+  = submit_tag 'Update User Info', :class => 'btn btn-primary'
+
+
+
+

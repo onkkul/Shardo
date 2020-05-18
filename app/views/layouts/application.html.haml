@@ -7,4 +7,13 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
+    -if flash[:error]
+      #error.message= flash[:error]
+    -elsif flash[:notice]
+      #notice.message= flash[:notice]
+    -elsif flash[:warning]
+      #warning.message = flash[:warning]
+     
     = yield
+    - unless @action == 'login'
+      = render "layouts/footer"

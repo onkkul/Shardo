@@ -1,0 +1,24 @@
+%h1 Create a post 
+= form_tag user_posts_path(@user), {Multipart:true} do
+
+  = label :post, :title,  'Post Title'
+  = text_field :post, 'title'
+
+  = label :post, :ingredients,  'Ingredients'
+  = text_field :post, 'ingredients'
+
+  = label :post, :location,  'Location'
+  = text_field :post, 'location'
+
+  = label :post, :image,  'image'
+  = file_field :post,  'image'
+
+  = label :post, :quantity,  'Quantity'
+  = text_field :post, 'quantity'
+  
+  = label :post, :post_age, 'Post Age'
+  = select :post, :post_age, ['2 hrs','4 hrs', '6 hrs']
+  
+  = hidden_field :user_id, value: @user.id
+
+  = submit_tag 'Create new Post!', :class => 'btn btn-primary'
