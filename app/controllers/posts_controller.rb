@@ -44,10 +44,8 @@ class PostsController < ApplicationController
   end
 
   def get_all
-    
   end
-
-
+  
   def update
     @post = Post.find params[:id]
     p @post

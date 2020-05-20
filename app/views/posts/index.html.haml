@@ -22,7 +22,7 @@ Hello, #{@user.name}!
   %tbody
     - @posts.each do |post|
       %tr
-        %td= image_tag post.image.thumb.url
+        %td= image_tag post.image
         // post.image
         // .thumb.url
         %td= post.title
