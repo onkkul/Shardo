@@ -19,7 +19,7 @@ Background: Following users exist
 @omniauth_test
 Scenario: See Create Post page
     Given I follow signup with "github"
-    Then I should see "Hello" on page
+    Then I should see "Create" on page
     And I follow "Create Post"
     Then I should see "Create a post" on page
     And I should see "Post Title" on page

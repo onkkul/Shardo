@@ -48,9 +48,14 @@ Given /^(?:|I )am on (.+)$/ do |page_name|
   visit path_to(page_name)
 end
 
-And /^(?:|I )go to (.+)$/ do |page_name|
+When /^(?:|I )go to (.+)$/ do |page_name|
   visit path_to(page_name)
 end
+
+And /^(?:|I )am on (.+)$/ do |page_name|
+  visit path_to(page_name)
+end
+
 
 When /^(?:|I )press "([^"]*)"$/ do |button|
   click_button(button)
@@ -107,13 +112,15 @@ end
 
 
 
-Then /^(?:|I )should see "([^"]*)"$/ do |text|
+Then /^(?:|I )should see "([^"]*)" on page$/ do |text|
   if page.respond_to? :should
     page.should have_content(text)
   else
     assert page.has_content?(text)
   end
 end
+
+
 
 Then /^(?:|I )should see \/([^\/]*)\/$/ do |regexp|
   regexp = Regexp.new(regexp)

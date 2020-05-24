@@ -23,6 +23,9 @@ module NavigationHelpers
     #I am on the home page for user "Tester Suny"
     when /^the homepage for user "([^"]*)"$/
       user_posts_path(User.find_by_name($1))
+    
+    when /^the edituser page for user "([^"]*)"$/
+      edit_user_path(User.find_by_name($1))
        
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
