@@ -15,12 +15,17 @@ module NavigationHelpers
 
     when /^the home\s?page$/
       '/'
-    when /^the Food Sharing App Home page$/
-      homepage_index_path
+    when /^the Login page of the Food Sharing App$/
+      welcome_login_path
       
-    #when /^the Food Sharing App Signup page$/
-      #signuppage_index_path
+    #"([^"]*)"$
+    #user_posts_path(User.find_by_name($1))
+    #I am on the home page for user "Tester Suny"
+    when /^the homepage for user "([^"]*)"$/
+      user_posts_path(User.find_by_name($1))
     
+    when /^the edit user page for user "([^"]*)"$/
+      edit_user_path(User.find_by_name($1))
        
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

@@ -3,16 +3,26 @@
 # newer version of cucumber-rails. Consider adding your own code to a new file
 # instead of editing this one. Cucumber will automatically load all features/**/*.rb
 # files.
-
 require 'cucumber/rails'
-
-# frozen_string_literal: true
-
+require 'omniauth'
+Before('@omniauth_test') do
+  OmniAuth.config.test_mode = true
+  Capybara.default_host = 'http://example.com'
+  OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
+    :provider => 'github',
+    :uid => '12345678',
+    # :user_id => '1',
+    :info => {:name => 'Tester Suny', :email => 'tester@binghamton.edu'} })
+  Rails.application.env_config["omniauth.auth"] = OmniAuth.config.mock_auth[:github]  
+end
+After('@omniauth_test') do
+  OmniAuth.config.test_mode = false
+  OmniAuth.config.mock_auth[:github] = nil
+end
 # Capybara defaults to CSS3 selectors rather than XPath.
 # If you'd prefer to use XPath, just uncomment this line and adjust any
 # selectors in your step definitions to use the XPath syntax.
 # Capybara.default_selector = :xpath
-
 # By default, any exception happening in your Rails application will bubble up
 # to Cucumber so that your scenario will fail. This is a different from how
 # your application behaves in the production environment, where an error page will
@@ -29,7 +39,6 @@ require 'cucumber/rails'
 # recommended as it will mask a lot of errors for you!
 #
 ActionController::Base.allow_rescue = false
-
 # Remove/comment out the lines below if your app doesn't have a database.
 # For some databases (like MongoDB and CouchDB) you may need to use :truncation instead.
 begin
@@ -37,7 +46,6 @@ begin
 rescue NameError
   raise "You need to add database_cleaner to your Gemfile (in the :test group) if you wish to use it."
 end
-
 # You may also want to configure DatabaseCleaner to use different strategies for certain features and scenarios.
 # See the DatabaseCleaner documentation for details. Example:
 #
@@ -52,9 +60,8 @@ end
 #     DatabaseCleaner.strategy = :transaction
 #   end
 #
-
+LAUNCHY_DEBUG=true
 # Possible values are :truncation and :transaction
 # The :transaction strategy is faster, but might give you threading problems.
 # See https://github.com/cucumber/cucumber-rails/blob/master/features/choose_javascript_database_strategy.feature
 Cucumber::Rails::Database.javascript_strategy = :truncation
-
