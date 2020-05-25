@@ -37,21 +37,21 @@ class PostsController < ApplicationController
     @post= Post.new
   end
 
-  def edit
-    @post = Post.find params[:id]
-    p params
-    p @post
-  end
+  # def edit
+  #   @post = Post.find params[:id]
+  #   # p params
+  #   # p @post
+  # end
 
-  def get_all
-  end
+  # def get_all
+  # end
   
-  def update
-    @post = Post.find params[:id]
-    p @post
-    @post.update_attributes(post_params)
-    flash[:notice] = "#{@post.title} was successfully updated."
-    redirect_to dashboard_index_path(@user)
-  end
+  # def update
+  #   @post = Post.find params[:id]
+  #   # p @post
+  #   @post.update_attributes(post_params)
+  #   flash[:notice] = "#{@post.title} was successfully updated."
+  #   redirect_to dashboard_index_path(@user)
+  # end
 
 end

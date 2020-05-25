@@ -65,6 +65,7 @@ group :test do
   # gem 'factory_girl_rails', :require => false # if using FactoryGirl    #added by onkar
   gem 'factory_bot_rails'    #added by onkar
   gem 'metric_fu'        # collect code metrics
+  gem 'simplecov', :require => false
 end
 
 group :development do
