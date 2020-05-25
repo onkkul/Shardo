@@ -18,7 +18,7 @@ Background: On Login page of Food Sharing App
 
     
 @omniauth_test
-Scenario: Successful Signup for the existing user
+Scenario: Successful login for the existing user
     When I follow signup with "github"
     Then I should see the message, "Welcome back Tester Suny! You have logged in via github."
     And I am on the homepage for user "Tester Suny"
