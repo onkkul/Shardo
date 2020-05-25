@@ -48,7 +48,7 @@ group :development, :test do
   gem 'sqlite3', '1.3.13'
   gem 'rspec-rails' , '~> 3.8'
   gem 'capybara' , '2.4.4'
-  gem 'factory_bot_rails'
+  # gem 'factory_bot_rails'
   gem 'launchy'
   gem 'railroady'
   gem 'ZenTest' , '4.11.0'
@@ -63,9 +63,8 @@ group :test do
   gem 'cucumber-rails-training-wheels' # basic imperative step defs
   gem 'database_cleaner' # required by Cucumber
   # gem 'factory_girl_rails', :require => false # if using FactoryGirl    #added by onkar
-  gem 'factory_bot_rails'    #added by onkar
+  # gem 'factory_bot_rails'    #added by onkar
   gem 'metric_fu'        # collect code metrics
-  gem 'simplecov', :require => false
 end
 
 group :development do
@@ -78,6 +77,6 @@ end
 
 group :production do
   gem 'pg', '~> 0.21' # for Heroku deployment
-  gem 'rails_12factor'
+  gem 'rails_12factor', '~> 0.0.3'
 end 
 
