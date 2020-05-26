@@ -31,6 +31,7 @@ gem 'loofah' , '>=2.2.3'
 
 gem 'omniauth'
 gem 'omniauth-github'  
+gem 'pg', '~> 0.21'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -45,7 +46,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   # Use sqlite3 as the database for active record
-  gem 'sqlite3', '1.3.13'
+  # gem 'sqlite3', '1.3.13'
   gem 'rspec-rails' , '~> 3.8'
   gem 'capybara' , '2.4.4'
   # gem 'factory_bot_rails'
@@ -76,7 +77,7 @@ group :development do
 end
 
 group :production do
-  gem 'pg', '~> 0.21' # for Heroku deployment
+  # gem 'pg', '~> 0.21' # for Heroku deployment
   gem 'rails_12factor', '~> 0.0.3'
 end 
 
