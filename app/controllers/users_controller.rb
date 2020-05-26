@@ -6,13 +6,13 @@ class UsersController < ApplicationController
   
   def edit
     @user = User.find params[:id]
-    p params
-    p @user
+    # p params
+    # p @user
   end
   
   def update
     @user = User.find params[:id]
-    p @user
+    # p @user
     @user.update_attributes(user_params)
     flash[:notice] = "#{@user.firstname} was successfully updated."
     redirect_to user_posts_path(@user) 

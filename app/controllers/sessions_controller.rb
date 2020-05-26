@@ -16,9 +16,9 @@ class SessionsController < ApplicationController
   end
   
   def create
-    puts 'params'
-    p params
-    puts '1'
+    # puts 'params'
+    # p params
+    # puts '1'
     begin
     #User is already signed in
       if session?
@@ -31,11 +31,11 @@ class SessionsController < ApplicationController
         end
       
       else #login or signup
-        puts '2'
-        p auth_hash
+        # puts '2'
+        # p auth_hash
         #User has alreasy registered and is logged in with same provider
         if Authorization.exists?(auth_hash)#User alreasy registered w/pro
-          puts '6'
+          # puts '6'
           auth=Authorization.find_with_omniauth(auth_hash)
           message="Welcome back #{auth.user.name}! "+ "You have logged in via #{auth.provider}."
           session[:user_id] = auth.user.id
@@ -45,23 +45,22 @@ class SessionsController < ApplicationController
           
           #redirect_to dashboard_index_path #and return 
         else
-          puts "user exists"
+          # puts "user exists"
           if User.exists?(auth_hash['info'])
-            
-            user=User.find_with_omniauth(auth_hash['info'])
-            auth=user.add_provider(auth_hash)
-            message="You can now login using #{auth_hash["provider"].capitalize}."
-            session[:user_id] = auth.user.id
-            self.current_user = auth.user
-            flash[:notice] = "#{message}"
-            redirect_to user_posts_path(user) and return
+            # user=User.find_with_omniauth(auth_hash['info'])
+            # auth=user.add_provider(auth_hash)
+            # message="You can now login using #{auth_hash["provider"].capitalize}."
+            # session[:user_id] = auth.user.id
+            # self.current_user = auth.user
+            # flash[:notice] = "#{message}"
+            redirect_to auth_failure_path and return #stop gap until the feature is developed. 
           else #User is registering with given provider
-            puts 'Should go here'
-            p auth_hash['info']
+            # puts 'Should go here'
+            # p auth_hash['info']
             #auth_hash["info"]["email"] check if BU email and then go to failure if not BU
             user = User.create_with_omniauth(auth_hash['info'])#! :name => auth_hash["info"]["name"], :email => auth_hash["info"]["email"] 
-            puts "user"
-            p user
+            # puts "user"
+            # p user
             auth=user.authorizations.create_with_omniauth(auth_hash)
             message = "Welcome #{user.name}! You have signed up via #{auth.provider}."
             #create current_user and session
@@ -96,7 +95,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    puts '4'
+    # puts '4'
     #render :text => "logged out"
     message = "#{self.current_user.name} has logged out"
     self.current_user = nil
@@ -107,12 +106,12 @@ class SessionsController < ApplicationController
   end
   
   def session?
-    puts '5'
+    # puts '5'
     !!session[:user_id]
   end
   
   def same_as_logged_in_user? info
-    puts '6'
+    # puts '6'
     user = User.find(session[:user_id])
     user.name ==info['name'] && user.email == info['email']
   end
